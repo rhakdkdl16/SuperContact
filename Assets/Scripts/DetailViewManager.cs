@@ -112,12 +112,4 @@ public class DetailViewManager : ViewManager
 
         ToggleEditMode(true);
     }
-
-    public void Next()
-    {
-        ThirdViewManager thirdViewManager = 
-            Instantiate(thirdViewPrefab).GetComponent<ThirdViewManager>();
-
-        mainManager.PresentViewManager(thirdViewManager);
-    }
 }
