@@ -52,13 +52,15 @@ public class ScrollViewManager : ViewManager, ICell
         leftNavgationViewButton.SetOnClickAction(() =>
         {
             isEditable = !isEditable;
-
+            
+            
             if (isEditable)
             {
                 leftNavgationViewButton.SetTitle("완료");
                 foreach (Cell cell in cellList)
                 {
                     cell.ActiveDelete = true;
+                    rightNavgationViewButton.gameObject.SetActive(false);
                 }
             }
             else
@@ -67,6 +69,7 @@ public class ScrollViewManager : ViewManager, ICell
                 foreach (Cell cell in cellList)
                 {
                     cell.ActiveDelete = false;
+                    rightNavgationViewButton.gameObject.SetActive(true);
                 }
             }
         });
