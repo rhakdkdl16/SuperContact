@@ -66,10 +66,10 @@ public class DetailViewManager : ViewManager
                 nameInputField.text = contactValue.name;
                 phoneNumberInputField.text = contactValue.phoneNumber;
                 emailInputField.text = contactValue.email;
-                
+                profileImage.sprite = SpriteManager.GetSprite(contactValue.profilePhotoFileName);
 
 
-                    }
+            }
         }
     }
 
