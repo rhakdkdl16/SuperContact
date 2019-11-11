@@ -29,6 +29,9 @@ public class DetailViewManager : ViewManager
     [SerializeField] InputField nameInputField;
     [SerializeField] InputField phoneNumberInputField;
     [SerializeField] InputField emailInputField;
+
+    [SerializeField] ImageButton profilePhtoImageButton;
+
     [SerializeField] Button saveButton;
     [SerializeField] Image profileImage;
 
@@ -49,6 +52,7 @@ public class DetailViewManager : ViewManager
         nameInputField.SetImmutable(editMode);
         phoneNumberInputField.SetImmutable(editMode);
         emailInputField.SetImmutable(editMode);
+        profilePhtoImageButton.Editable = editMode;
 
         if (editMode)
         {
@@ -65,9 +69,9 @@ public class DetailViewManager : ViewManager
                 nameInputField.text = contactValue.name;
                 phoneNumberInputField.text = contactValue.phoneNumber;
                 emailInputField.text = contactValue.email;
-                profileImage.sprite = SpriteManager.GetSprite(contactValue.profilePhotoFileName);
+          
 
-
+                profilePhtoImageButton.Image = SpriteManager.GetSprite(contactValue.profilePhotoFileName);
             }
         }
     }
@@ -106,7 +110,7 @@ public class DetailViewManager : ViewManager
         newContact.name = nameInputField.text;
         newContact.phoneNumber = phoneNumberInputField.text;
         newContact.email = emailInputField.text;
-        
+        newContact.profilePhotoFileName = profilePhtoImageButton.Image.name;
         saveDelegate?.Invoke(newContact);
 
         ToggleEditMode(true);

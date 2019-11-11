@@ -22,7 +22,7 @@ public class ScrollViewManager : ViewManager, ICell
     private void Awake() 
     {
         // Title 지정
-        title = "수퍼연락처";
+        title = "DS 연락처";
 
         // Add 버튼 지정
         rightNavgationViewButton = Instantiate(buttonPrefab).GetComponent<SCButton>();
@@ -167,7 +167,7 @@ public class ScrollViewManager : ViewManager, ICell
                 contacts.Value.contactList[cellIndex] = newContact;
                 
                 cell.Title = newContact.name;
-
+                cell.ProfilePhotoSprite = SpriteManager.GetSprite(newContact.profilePhotoFileName);
                 //ClearCell();
                 //LoadData();
             };
@@ -205,4 +205,5 @@ public class ScrollViewManager : ViewManager, ICell
             confirmPopupViewManager.Open();
         }
     }
+    
 }
