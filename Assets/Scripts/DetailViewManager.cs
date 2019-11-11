@@ -30,7 +30,6 @@ public class DetailViewManager : ViewManager
     [SerializeField] InputField phoneNumberInputField;
     [SerializeField] InputField emailInputField;
     [SerializeField] Button saveButton;
-    [SerializeField] GameObject thirdViewPrefab;
     [SerializeField] Image profileImage;
 
     public delegate void DetailViewManagerSaveDelegate(Contact contact);

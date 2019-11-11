@@ -24,8 +24,12 @@ public class AddPopupViewManager : PopupViewManager
         addPhotoPopupViewManager.Open(AnimationType.TYPE2);
         addPhotoPopupViewManager.didSelectImage = (sprite) =>
         {
+           
             profilePhotoImage.sprite = sprite;
         };
+
+       
+
     }
 
     protected override void Awake()
@@ -78,9 +82,13 @@ public class AddPopupViewManager : PopupViewManager
     
             if (profilePhotoImage.sprite)
                 contact.profilePhotoFileName = profilePhotoImage.sprite.name;
-
+            else
+            {
+                contact.profilePhotoFileName = "Photo/" + "Normal";
+            }
             // Main 화면에 Contact 객체 전달
             addContactCallback(contact);
+
 
             // AddPanel 닫기
             Close();
