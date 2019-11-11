@@ -9,8 +9,7 @@ public class AddPopupViewManager : PopupViewManager
     [SerializeField] InputField nameInputField;
     [SerializeField] InputField phoneNumberInputField;
     [SerializeField] InputField emailInputField;
-    [SerializeField] Image profilePhotoImage;
-
+    [SerializeField] ImageButton profilePhotoImage;
     [SerializeField] GameObject addPhotoPopupViewPrefab;
 
     public delegate void AddContact(Contact contact);
@@ -25,7 +24,7 @@ public class AddPopupViewManager : PopupViewManager
         addPhotoPopupViewManager.didSelectImage = (sprite) =>
         {
            
-            profilePhotoImage.sprite = sprite;
+            profilePhotoImage.Image = sprite;
         };
 
        
@@ -80,8 +79,8 @@ public class AddPopupViewManager : PopupViewManager
             contact.phoneNumber = phoneNumber;
             contact.email = email;
     
-            if (profilePhotoImage.sprite)
-                contact.profilePhotoFileName = profilePhotoImage.sprite.name;
+            if (profilePhotoImage.Image)
+                contact.profilePhotoFileName = profilePhotoImage.Image.name;
             else
             {
                 contact.profilePhotoFileName = "Photo/\\Normal";
