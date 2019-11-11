@@ -29,7 +29,10 @@ public class AddPhotoPopupViewManager : PopupViewManager
             * (sprites.Length / gridLayoutGroup.constraintCount) + gridLayoutGroup.padding.top
             + gridLayoutGroup.padding.bottom;
 
-        scrollRect.content.sizeDelta = new Vector2(0, cellHeight);
+
+        
+
+        scrollRect.content.sizeDelta = new Vector2(0, cellHeight + gridLayoutGroup.cellSize.y + gridLayoutGroup.spacing.y);
 
         foreach (Sprite sprite in sprites)
         {

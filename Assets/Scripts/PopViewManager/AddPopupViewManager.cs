@@ -84,7 +84,7 @@ public class AddPopupViewManager : PopupViewManager
                 contact.profilePhotoFileName = profilePhotoImage.sprite.name;
             else
             {
-                contact.profilePhotoFileName = "Photo/" + "Normal";
+                contact.profilePhotoFileName = "Photo/\\Normal";
             }
             // Main 화면에 Contact 객체 전달
             addContactCallback(contact);
