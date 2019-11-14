@@ -7,7 +7,7 @@ public class PopupViewManager : MonoBehaviour
 {
     public enum AnimationType { TYPE1, TYPE2 };
     public AnimationType animationType;
-
+    
     Animator animator;
 
     protected virtual void Awake()
